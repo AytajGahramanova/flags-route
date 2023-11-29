@@ -18,7 +18,6 @@ const App = () => {
       }}
     >
       <Header toggleDarkMode={toggleDarkMode} />
-      <Flags />
       <Routes>
         <Route path="/flags" element={<Flags />} />
         <Route path="/flags/:region" element={<FlagDetail />} />

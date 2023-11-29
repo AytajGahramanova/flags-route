@@ -56,12 +56,7 @@ const Flags = () => {
             <p>Population: {item.population}</p>
             <p>Region: {item.region}</p>
             <p>Capital: {item.capital}</p>
-            <Button
-              onClick={() => {
-                console.log(`Navigating to /flags/${item?.region}`);
-                navigate(`/flags/${item?.region}`);
-              }}
-            >
+            <Button onClick={() => navigate(`/flags/${item?.name?.common}`)}>
               Details
             </Button>
           </div>
