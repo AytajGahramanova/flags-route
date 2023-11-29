@@ -62,3 +62,13 @@
   width: 30rem !important;
   height: 20rem !important;
 }
+.search-filter{
+  display: flex;
+  justify-content: space-between;
+  padding: 2px 28px;
+}
+#dropdown-basic-button{
+  background-color: #ebe3d5;
+  border: none;
+  padding: 5px;
+}
