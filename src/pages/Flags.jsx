@@ -22,7 +22,7 @@ const Flags = () => {
 
   useEffect(() => {
     const filtered = allFlags.filter((item) =>
-      item.region.toLowerCase().includes(input.toLowerCase())
+      item.name?.common.toLowerCase().includes(input.toLowerCase())
     );
     setFilteredFlags(filtered);
   }, [input, allFlags]);
@@ -32,7 +32,7 @@ const Flags = () => {
       <div className="search">
         <Input
           type="text"
-          placeholder="Search for a region..."
+          placeholder="Search for a country..."
           value={input}
           onChange={(e) => setInput(e.target.value)}
         ></Input>
@@ -52,11 +52,11 @@ const Flags = () => {
             <div>
               <img src={item.flags?.png} alt="" style={{ width: "15rem" }} />
             </div>
-            <h2>Common: {item.name?.common}</h2>
+            <h2>{item.name?.common}</h2>
             <p>Population: {item.population}</p>
             <p>Region: {item.region}</p>
             <p>Capital: {item.capital}</p>
-            <Button onClick={() => navigate(`/flags/${item?.name?.common}`)}>
+            <Button onClick={() => navigate(`/flags/${item.name?.common}`)}>
               Details
             </Button>
           </div>

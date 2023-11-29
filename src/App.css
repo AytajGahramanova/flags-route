@@ -51,3 +51,14 @@
     text-align: center;
   }
 }
+
+.details-wrapper{
+  display: flex;
+  justify-content: space-evenly;
+  margin: 7% auto;
+  padding: 30px 0;
+}
+.details-wrapper .image img{
+  width: 30rem !important;
+  height: 20rem !important;
+}

@@ -17,9 +17,9 @@ const App = () => {
         color: isDarkMode ? "#fff" : "#272829",
       }}
     >
-      <Header toggleDarkMode={toggleDarkMode} />
+      <Header toggleDarkMode={toggleDarkMode} isDarkMode={isDarkMode} />
       <Routes>
-        <Route path="/flags" element={<Flags />} />
+        <Route path="/" element={<Flags />} />
         <Route path="/flags/:region" element={<FlagDetail />} />
       </Routes>
     </div>

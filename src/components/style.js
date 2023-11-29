@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 export const Navbar = styled.nav`
-  background-color: red;
   color: black;
   padding: 0px 60px;
   background: rgba(255, 255, 255, 0.05);
@@ -13,12 +12,11 @@ export const Navbar = styled.nav`
   justify-content: space-between;
 `;
 
-
 export const Button = styled.button`
   padding: 10px 20px;
   margin: 20px;
+  font-size: 16px;
   border: none;
   background-color: transparent;
   cursor: pointer;
 `;
-

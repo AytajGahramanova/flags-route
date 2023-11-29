@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import "../../src/App.css";
 
 const FlagDetail = () => {
   const { region } = useParams();
@@ -25,24 +26,24 @@ const FlagDetail = () => {
     getFlag();
   }, []);
 
-  //   if (!flag.common) {
-  //     return <div>Loading...</div>;
-  //   }
+  // if (!country.common) {
+  //   return <div>Loading...</div>;
+  // }
 
   return (
-    <div>
+    <div className="details-wrapper">
       <div className="image">
         <img src={country.flags?.png} alt="" style={{ width: "15rem" }} />
       </div>
       <div className="flag-content">
-        <h3>{country?.name?.common}</h3>
+        <h1 style={{ fontSize: 30 }}>{country?.name?.common}</h1>
         <div className="left">
           {/* <p>Native Name: {country.nativeName?.nld?.common}</p> */}
-          <p>Population: {country?.population}</p>
-          <p>Region: {country.region}</p>
-          <p>Sub Region: {country.subregion}</p>
+          <p style={{ fontSize: 20 }}>Population: {country?.population}</p>
+          <p style={{ fontSize: 20 }}>Region: {country.region}</p>
+          <p style={{ fontSize: 20 }}>Sub Region: {country.subregion}</p>
           {country?.capital?.map((c) => (
-            <p>Capital: {c?.capital}</p>
+            <p style={{ fontSize: 20 }}>Capital: {c?.capital}</p>
           ))}
         </div>
         <div className="right">
