@@ -36,10 +36,9 @@ const Flags = () => {
     setFilteredFlags(filtered);
   }, [input, allFlags]);
 
-
   const filterDropdown = (selectedRegion) => {
     setOpenDropdown(!dropdownOpen);
-  
+
     if (selectedRegion) {
       const filtered = allFlags.filter((item) =>
         item.region.toLowerCase().includes(selectedRegion.toLowerCase())
@@ -47,8 +46,6 @@ const Flags = () => {
       setFilteredFlags(filtered);
     }
   };
-  
-
 
   return (
     <div>
@@ -60,7 +57,7 @@ const Flags = () => {
           onChange={(e) => setInput(e.target.value)}
         ></Input>
 
-        <DropdownButton 
+        <DropdownButton
           id="dropdown-basic-button"
           title={dropdownOpen ? "Select Region" : "Filter by Region"}
           show={dropdownOpen}
@@ -68,31 +65,36 @@ const Flags = () => {
         >
           <div style={{ backgroundColor: "#FFF5C2", width: 111 }}>
             <Dropdown.Item
-              style={{ textDecoration: "none", color: "#000", padding: 10 }} onClick={() => filterDropdown("Africa")}
+              style={{ textDecoration: "none", color: "#000", padding: 10 }}
+              onClick={() => filterDropdown("Africa")}
             >
               Africa
             </Dropdown.Item>
             <br />
             <Dropdown.Item
-              style={{ textDecoration: "none", color: "#000", padding: 10 }} onClick={() => filterDropdown("America")}
+              style={{ textDecoration: "none", color: "#000", padding: 10 }}
+              onClick={() => filterDropdown("America")}
             >
               America
             </Dropdown.Item>
             <br />
             <Dropdown.Item
-              style={{ textDecoration: "none", color: "#000", padding: 10 }} onClick={() => filterDropdown("Asia")}
+              style={{ textDecoration: "none", color: "#000", padding: 10 }}
+              onClick={() => filterDropdown("Asia")}
             >
               Asia
             </Dropdown.Item>
             <br />
             <Dropdown.Item
-              style={{ textDecoration: "none", color: "#000", padding: 10 }} onClick={() => filterDropdown("Europe")}
+              style={{ textDecoration: "none", color: "#000", padding: 10 }}
+              onClick={() => filterDropdown("Europe")}
             >
               Europe
             </Dropdown.Item>
             <br />
             <Dropdown.Item
-              style={{ textDecoration: "none", color: "#000", padding: 10 }} onClick={() => filterDropdown("Oceania")}
+              style={{ textDecoration: "none", color: "#000", padding: 10 }}
+              onClick={() => filterDropdown("Oceania")}
             >
               Oceania
             </Dropdown.Item>
@@ -106,14 +108,17 @@ const Flags = () => {
           flexWrap: "wrap",
           gap: 10,
           justifyContent: "center",
-          margin: 20,
-          marginTop: 40
+          padding: "40px 100px",
         }}
       >
         {filteredFlags.map((item, index) => (
           <div className="flags-wrapper" key={index}>
             <div>
-              <img src={item.flags?.png} alt="" style={{ width: "15rem" }} />
+              <img
+                src={item.flags?.png}
+                alt="img"
+                style={{ width: "240px", height: "120px", objectFit: "cover" }}
+              />
             </div>
             <h2>{item.name?.common}</h2>
             <p>Population: {item.population}</p>

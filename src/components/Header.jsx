@@ -9,7 +9,7 @@ const Header = ({ toggleDarkMode, isDarkMode }) => {
           Where in the world?
         </h3>
       </div>
-      <div style={{ display: "flex", alignItems: "center" }}>
+      <div style={{ display: "flex", alignItems: "center", gap: "15px" }}>
         {isDarkMode ? (
           <DarkModeIcon style={{ color: "#fff" }} />
         ) : (
